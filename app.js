@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const expHbs = require('express-handelbars');
+const expHbs = require('express-handlebars');
 const User = require('./models/User');
 
 const app = express();
@@ -39,7 +39,7 @@ mongoose.connect(
 );
 
 app.get('/', (req, res) => {
-  res.render('landing_page');
+  res.render('landing');
 });
 
-app.listen(5000, () => console.log('Server Started'));
+app.listen(3000, () => console.log('Server Started'));
