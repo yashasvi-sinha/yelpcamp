@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+    height:100%;
+    width:100%;
+}
+
+.container1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width:100%;
+    background-image: url('https://wallpaperaccess.com/full/1217860.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 2s;
+
+    animation-name:animate;
+    animation-duration:30s ;
+    animation-direction:alternate-reverse ;
+    animation-fill-mode:both ;
+    animation-iteration-count:infinite ;
+    animation-play-state:running ;
+    animation-timing-function:ease-in-out ;
+}
+h2{
+    position: absolute;
+    top:40%;
+    color:rgb(255, 255, 255);
+}
+
+@keyframes animate{
+    0%{
+        background-image: url('https://img.wallpapersafari.com/desktop/1536/864/37/10/2XEgmx.jpg');
+    }
+    10%{
+        background-image: url('https://www.wallpaperkiss.com/wimg/b/124-1245108_big.jpg');
+    }
+    20%{
+        background-image: url('https://previews.123rf.com/images/everst/everst1605/everst160500056/58406831-man-traveler-with-big-backpack-mountaineering-travel-lifestyle-concept-lake-and-mountains-on-backgro.jpg');
+    }
+    10%{
+        background-image: url('https://www.thesavvyglobetrotter.com/wp-content/uploads/2019/09/camping-essentials.jpg');
+    }
+    20%{
+        background-image: url('https://cutewallpaper.org/21/camping-wallpaper-hd/Camping-Wallpaper,-wallpaper-collections-at-graciaviva.cat.jpg');
+    }
+    10%{
+        background-image: url('https://papers.co/wallpaper/papers.co-no68-camping-river-mountain-summer-nature-26-wallpaper.jpg');
+    }
+    60%{
+        background-image: url('https://www.wallpaperbetter.com/wallpaper/944/95/667/tent-reflection-camp-camping-hd-1080P-wallpaper.jpg');
+    }
+    80%{
+        background-image: url('https://glenworth.com.au/wp-content/uploads/2016/10/Camping_hero_HR-scaled.jpg');
+    }
+
+}
