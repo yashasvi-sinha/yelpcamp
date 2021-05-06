@@ -1,8 +1,15 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const User = require('./models/User')
+const exphbs = require('express-handlebars')
 
-const app = express()
+const app = express()  
+
+app.use(express.static('public'))
+
+
+app.engine('hbs', exphbs({extname:'hbs', defaultLayout:'index'}))
+app.set('view engine' , 'hbs')
 
 
 const DB_URL = "mongodb+srv://express-attainu:qAmxNDPVztn2rSUG@cluster0.bg4zd.mongodb.net/yelpcamp-attainu?retryWrites=true&w=majority"
@@ -32,6 +39,11 @@ mongoose.connect(DB_URL, {
 
 })
 
+// home route
+app.get('/',(req,res)=>{
+
+    res.render('home')
+})
 
 
 
