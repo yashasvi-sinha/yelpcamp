@@ -1,0 +1,45 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+ 
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 0 130px; 
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail{
+    padding: 0;
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+footer{
+    margin-top: 10px;
+    background-color: #eee;
+    position: absolute;
+    left: 0;
+    height: 130px;
+    bottom: 0;
+    width: 100%;
+    overflow:hidden;
+}
+
+footer div{
+    margin: 15px;
+}
+
+#delete-form{
+    display: inline;
+}
+
+#map{
+    height: 400px;
+    width: 100%;
+}
