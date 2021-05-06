@@ -42,4 +42,8 @@ app.get('/', (req, res) => {
   res.render('landing');
 });
 
+app.get('/campgrounds', (req, res) => {
+  res.render('home');
+});
+
 app.listen(3000, () => console.log('Server Started'));
