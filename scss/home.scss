@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #000;
+    section{
+        display: grid;
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/491/734/493/tent-mountains-landscape-camp-hd-wallpaper-preview.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        color: #fff;
+        height:100vh;
+        gap: 10px;
+        h1 {
+            font-size:  2rem;
+
+            span{
+                color: skyblue;
+            } 
+        }
+        button{
+            border-radius: 10px;
+            padding:10px;
+            background: skyblue;
+            border: none;
+            color: #fff;
+            font-weight: 200;
+            font-size: 1rem;
+            cursor: pointer;
+            width:80%
+        }
+    }
+}

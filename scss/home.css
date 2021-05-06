@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #000;
+}
+
+body section {
+  display: -ms-grid;
+  display: grid;
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/491/734/493/tent-mountains-landscape-camp-hd-wallpaper-preview.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
+  color: #fff;
+  height: 100vh;
+  gap: 10px;
+}
+
+body section h1 {
+  font-size: 2rem;
+}
+
+body section h1 span {
+  color: skyblue;
+}
+
+body section button {
+  border-radius: 10px;
+  padding: 10px;
+  background: skyblue;
+  border: none;
+  color: #fff;
+  font-weight: 200;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 80%;
+}
+/*# sourceMappingURL=home.css.map */
