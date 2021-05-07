@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+
+body{
+    background-image: url("https://images.unsplash.com/photo-1515228146022-7d8e52f8bba3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1453&q=80");
+}
+.container{
+    width: 50%;
+    border-radius: 15px;
+    /* background-color: slateblue; */
+    font-family: 'Reggae One', cursive;
+    color: whitesmoke;
+    background: linear-gradient(to right, #fc00ff, #00dbde); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
+}
+.heading{
+    color: aquamarine;
+    font-family: 'Satisfy', cursive;
+}
+.btn{
+    background-color: yellowgreen;
+    color: aliceblue;
+    transition: .3s, ease;
+}
+.btn:hover{
+    background-color: tomato;
+    color: aliceblue;
+    transform: scale(1.1);
+}
+.goback{
+    color: blue;
+    font-size: larger;
+}
