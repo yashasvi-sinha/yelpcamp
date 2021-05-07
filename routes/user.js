@@ -2,6 +2,11 @@ const express = require('express')
 const router = express.Router()
 const UserModel = require('../models/User')
 
+router.get("/home", (req, res) => {
+    console.log("Landing page Started")
+    res.render("landingPage")
+})
+
 router.get('/signUp', (req, res) => {
     res.render('signup')
 })
