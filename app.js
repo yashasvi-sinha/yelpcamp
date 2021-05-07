@@ -10,7 +10,6 @@ const app = express()
 const userRouter = require('./routes/user')
 const { seedDB } = require('./seed')
 
-
 const {DATABASE_URL} = process.env
 
 mongoose.connect(DATABASE_URL, {
@@ -27,11 +26,16 @@ mongoose.connect(DATABASE_URL, {
 })
 
 //Handle Bars Middleware
-app.engine('hbs', expHbs({ extname: 'hbs'  }))
+app.engine('hbs', expHbs({ 
+    extname: 'hbs',
+    defaultLayout:false
+}))
 app.set('view engine', 'hbs')
 
 app.use(express.urlencoded({extended: false}))
 
+app.use(express.static("style"))
+app.use(express.static("script"))
 
 app.use('/user', userRouter)
 
