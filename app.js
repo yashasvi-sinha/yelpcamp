@@ -1,3 +1,4 @@
+
 const express = require('express');
 const session = require('express-session');
 const MongoDBSession = require('connect-mongodb-session')(session);
@@ -11,7 +12,7 @@ const dotenv = require('dotenv');
 
 const app = express();
 
-dotenv.config({ path: './.env' });
+const { seedDB } = require('./seed')
 
 const DB = process.env.DATABASE.replace(
   '<password>',
@@ -121,8 +122,12 @@ app.get('/login', (req, res) => {
   res.render('login');
 });
 
+
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
+
+    // seedDB()
+
 
   const user = await User.findOne({ email });
 
@@ -137,6 +142,7 @@ app.post('/login', async (req, res) => {
   }
 
   req.session.isAuth = true;
+
 
   res.redirect('/campgrounds/new');
 });
