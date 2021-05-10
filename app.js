@@ -9,9 +9,11 @@ const app = express()
 //Routers
 const userRouter = require('./routes/user')
 const { seedDB } = require('./seed')
+const CampgroundModel = require('./models/Campground')
+const CommentModel = require('./models/Comment')
 
 
-const {DATABASE_URL} = process.env
+const { DATABASE_URL } = process.env
 
 mongoose.connect(DATABASE_URL, {
     useNewUrlParser: true,
@@ -27,10 +29,11 @@ mongoose.connect(DATABASE_URL, {
 })
 
 //Handle Bars Middleware
-app.engine('hbs', expHbs({ extname: 'hbs'  }))
+app.engine('hbs', expHbs({ extname: 'hbs' }))
 app.set('view engine', 'hbs')
 
-app.use(express.urlencoded({extended: false}))
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 
 app.use('/user', userRouter)
@@ -70,10 +73,62 @@ app.get('/', async (req, res) => {
     res.send("Welcome To YelpCamp")
 })
 
+app.get('/campground/:campgroundId', async (req, res) => {
+
+    const campground = await CampgroundModel.findById(req.params.campgroundId)
 
 
+    res.render
+})
+
+// How to achieve relationships in MongoDb
+app.post('/campground', async (req, res) => {
+
+    const campgroundDoc = await CampgroundModel.create({ name: req.body.name })
+
+    const result = await campgroundDoc.save()
+
+    res.json(result)
+})
 
 
+app.post('/comment/add/:campgroundId/', async (req, res) => {
 
+    // // 1. Get the document , 2. Push to that doc, 3. send this doc back to the database
+    // // find
+
+    // const doc = await CampgroundModel.findById(req.params.campgroundId)
+    // console.log(doc)
+
+    // doc.comments.push(req.body.text)
+
+    // // await CampgroundModel.updateOne({})
+    // // const result = await CampgroundModel.updateOne({id: req.params.campgroundId})
+    // await doc.save()
+
+    // // 2. Directly send 
+
+    // // const result = await CampgroundModel.findByIdAndUpdate(req.params.campgroundId, {comments: [req.body.text]})
+
+    // res.json(result)
+
+    const foundCampgroundDoc = await CampgroundModel.findById(req.params.campgroundId)
+
+    const commentDoc = await CommentModel.create(req.body)
+
+    commentDoc.campground = foundCampgroundDoc
+
+    const commentResult = await commentDoc.save()
+    console.log("commentResult", commentResult)
+
+
+    foundCampgroundDoc.comments.push(commentDoc)
+
+    const campgroundResult = await foundCampgroundDoc.save()
+    console.log("campgroundResult", campgroundResult)
+
+    res.json({commentResult, campgroundResult})
+
+})
 
 app.listen(5000, () => console.log("Server Started"))
