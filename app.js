@@ -120,6 +120,7 @@ app.post('/comment/add/:campgroundId/', async (req, res) => {
 
     const commentResult = await commentDoc.save()
     console.log("commentResult View", commentResult)
+    console.log("Main Changes")
 
 
     foundCampgroundDoc.comments.push(commentDoc)
