@@ -11,14 +11,13 @@ const shopicon = L.icon({
 
 const shop = L.marker([18.95225, 72.80453], { icon: shopicon })
 const customer = L.marker([18.952163, 72.803736], { draggable: true })
+customer.addTo(map).bindPopup('You are here').openPopup()
 
-
-customer.addTo(map)
 shop.addTo(map)
 
 
 function locationofuser(event) {
-
+    customer.bindPopup('You are here').openPopup()
     console.log(customer.getLatLng())
 }
 
