@@ -21,7 +21,12 @@ function locationofuser(event) {
     console.log(customer.getLatLng())
 }
 
+function addpopup() {
+    customer.bindPopup('You are here').openPopup()
+}
+
 customer.addEventListener('dragend', locationofuser)
+customer.addEventListener('click', addpopup)
 
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
     var R = 6371; // Radius of the earth in km
